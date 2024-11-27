@@ -45,11 +45,12 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    align-items: center; /* تراز کردن المان‌ها */
+    align-items: center; /* تراز کردن تمام عناصر به مرکز */
 }
 
 form input, form button {
-    width: 300px; /* هماهنگ‌سازی عرض */
+    width: 100%; /* عرض کامل برای کادرها و دکمه */
+    max-width: 300px; /* محدود کردن عرض به 300px */
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -69,6 +70,7 @@ form button {
     cursor: pointer;
     transition: 0.3s ease;
     text-align: center; /* وسط‌چین کردن متن داخل دکمه */
+    font-weight: bold;
 }
 
 form button:hover {
