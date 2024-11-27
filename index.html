@@ -3,88 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sam.ge - For Sale</title>
-    <!-- لینک‌دهی به فایل CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- لینک‌دهی به فونت Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Submit Your Details</title>
+    <style>
+        /* استایل برای بدنه */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* استایل برای تیتر اصلی */
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* استایل برای توضیحات */
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* استایل برای فرم */
+        iframe {
+            width: 100%;
+            max-width: 640px;
+            height: 800px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- بخش اطلاعات فروش دامنه -->
-        <div class="left">
-            <h1>sam.ge is For Sale!</h1>
-            <p>Own this exceptional domain and elevate your online presence to the next level.</p>
-            <p>Fill out the form, and we’ll respond promptly with more details.</p>
-        </div>
-        <!-- بخش فرم تماس -->
-        <div class="right">
-            <h2>Free Domain Name Inquiry</h2>
-            <form id="domainForm">
-                <input type="text" id="name" placeholder="Your name (required)" required>
-                <input type="email" id="email" placeholder="Your email address (required)" required>
-                <input type="number" id="offer" placeholder="Your offer in USD (optional)">
-                <input type="text" id="antiSpam" placeholder="" required>
-                <button type="submit">Submit</button>
-            </form>
-            <p>Your information will be used exclusively to respond to your inquiry. We respect your privacy.</p>
-        </div>
-    </div>
+    <h1>Submit Your Details</h1>
+    <p>Please fill out the form below to share your details with us:</p>
 
-    <!-- اسکریپت برای مدیریت سؤال امنیتی و ارسال فرم -->
-    <script>
-        // ایجاد سؤال امنیتی تصادفی
-        const num1 = Math.floor(Math.random() * 20) + 1; // عدد اول بین 1 تا 20
-        const num2 = Math.floor(Math.random() * 20) + 1; // عدد دوم بین 1 تا 20
-        const question = `What is ${num1} + ${num2}?`;
-        document.getElementById('antiSpam').setAttribute('placeholder', question);
-
-        // اضافه کردن پاسخ صحیح به داده‌های فرم
-        const form = document.getElementById('domainForm');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            // دریافت پاسخ کاربر و بررسی درست بودن آن
-            const userAnswer = parseInt(document.getElementById('antiSpam').value);
-            if (userAnswer !== num1 + num2) {
-                alert('Incorrect answer to the security question!');
-                return; // ارسال فرم متوقف می‌شود
-            }
-
-            // جمع‌آوری اطلاعات فرم
-            const data = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                offer: document.getElementById('offer').value,
-                antiSpam: userAnswer
-            };
-
-            try {
-                // ارسال درخواست به Web App
-                const response = await fetch('https://script.google.com/macros/s/AKfycbxOGdmV3jiKJBZfLDks94Bq3Wql8zws1b4QvjeLLcrRpKHbfXEQglGpL9vEZn0ZZBsXMA/exec', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                // پردازش پاسخ
-                if (response.ok) {
-                    const result = await response.json();
-                    if (result.status === 'success') {
-                        alert('Form submitted successfully!');
-                        form.reset();
-                    } else {
-                        alert('Something went wrong. Please try again.');
-                    }
-                } else {
-                    alert(`Server error: ${response.status}`);
-                }
-            } catch (error) {
-                alert('Error: ' + error.message);
-            }
-        });
-    </script>
+    <!-- جاسازی فرم گوگل -->
+    <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfpoJYnKB_x6vpdkvpuarHjQJDb8UcDb61GXN0OuETmNRkniw/viewform?embedded=true"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading…
+    </iframe>
 </body>
 </html>
