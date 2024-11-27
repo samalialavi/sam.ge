@@ -1,4 +1,4 @@
-/* استایل‌های پایه */
+/* استفاده از فونت مینیمال انگلیسی */
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
@@ -79,7 +79,22 @@ p {
     color: #666;
 }
 
-/* استایل واکنش‌گرا برای دستگاه‌های کوچک‌تر از 768px */
+/* استایل برای Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    font-size: 0.8rem;
+    color: #555;
+    border-top: 1px solid #ddd;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* واکنش‌گرایی */
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column; /* تغییر به حالت ستونی */
@@ -108,9 +123,12 @@ p {
         max-width: 100%; /* عرض کامل برای فیلدها */
         font-size: 0.9rem; /* کاهش اندازه فونت */
     }
+
+    footer {
+        font-size: 0.7rem; /* کاهش اندازه متن در موبایل */
+    }
 }
 
-/* استایل واکنش‌گرا برای دستگاه‌های کوچک‌تر از 480px */
 @media screen and (max-width: 480px) {
     .container {
         padding: 10px;
@@ -132,5 +150,9 @@ p {
     form input, form button {
         padding: 8px; /* کاهش فضای داخلی فیلدها */
         font-size: 0.8rem;
+    }
+
+    footer {
+        font-size: 0.6rem; /* کاهش بیشتر اندازه متن در دستگاه‌های کوچک‌تر */
     }
 }
