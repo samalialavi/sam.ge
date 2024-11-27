@@ -8,29 +8,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="left">
-            <h1>sam.ge is For Sale!</h1>
-            <p>Own this exceptional domain and elevate your online presence to the next level.</p>
-            <p>Fill out the form, and we’ll respond promptly with more details.</p>
+    <div class="wrapper">
+        <div class="container">
+            <div class="left">
+                <h1>sam.ge is For Sale!</h1>
+                <p>Own this exceptional domain and elevate your online presence to the next level.</p>
+                <p>Fill out the form, and we’ll respond promptly with more details.</p>
+            </div>
+            <div class="right">
+                <h2>Free Domain Name Inquiry</h2>
+                <form id="domainInquiryForm">
+                    <input type="text" id="name" placeholder="Your name (required)" required>
+                    <input type="email" id="email" placeholder="Your email address (required)" required>
+                    <input type="number" id="offer" placeholder="Your offer in USD (optional)">
+                    <input type="number" id="antiSpamAnswer" placeholder="Security Question: Loading..." required>
+                    <button type="submit">Submit</button>
+                </form>
+                <p id="responseMessage" style="display: none; color: green;">Your form has been successfully submitted!</p>
+            </div>
         </div>
-        <div class="right">
-            <h2>Free Domain Name Inquiry</h2>
-            <form id="domainInquiryForm">
-                <input type="text" id="name" placeholder="Your name (required)" required>
-                <input type="email" id="email" placeholder="Your email address (required)" required>
-                <input type="number" id="offer" placeholder="Your offer in USD (optional)">
-                <input type="number" id="antiSpamAnswer" placeholder="Security Question: Loading..." required>
-                <button type="submit">Submit</button>
-            </form>
-            <p id="responseMessage" style="display: none; color: green;">Your form has been successfully submitted!</p>
-        </div>
-    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>©2024 SAM Group. Ver. 1.1.0</p>
-    </footer>
+        <!-- Footer -->
+        <footer>
+            <p>©2024 SAM Group. Ver. 1.2.0</p>
+        </footer>
+    </div>
 
     <script>
         // تولید اعداد تصادفی برای سوال امنیتی
