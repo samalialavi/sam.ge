@@ -45,16 +45,16 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    align-items: center; /* تراز کردن المان‌ها */
 }
 
 form input, form button {
-    width: 100%;
-    max-width: 400px;
+    width: 300px; /* کاهش عرض کادرها و دکمه */
     padding: 10px;
-    margin: 0 auto;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
+    text-align: left;
 }
 
 form input::placeholder {
@@ -102,26 +102,8 @@ footer p {
         gap: 10px;
     }
 
-    .left, .right {
-        padding: 10px;
-    }
-
-    .left h1 {
-        font-size: 1.5rem; /* کاهش اندازه فونت برای عنوان */
-        margin-bottom: 5px;
-    }
-
-    .left p {
-        font-size: 0.9rem; /* کاهش اندازه فونت برای متن‌ها */
-    }
-
-    .right h2 {
-        font-size: 1.2rem; /* کاهش اندازه فونت برای عنوان فرم */
-    }
-
     form input, form button {
-        max-width: 100%; /* عرض کامل برای فیلدها */
-        font-size: 0.9rem; /* کاهش اندازه فونت */
+        width: 90%; /* عرض کادرها در موبایل به 90% عرض صفحه محدود می‌شود */
     }
 
     footer {
@@ -135,24 +117,12 @@ footer p {
         gap: 5px;
     }
 
-    .left h1 {
-        font-size: 1.2rem;
-    }
-
-    .left p {
-        font-size: 0.8rem;
-    }
-
-    .right h2 {
-        font-size: 1rem;
-    }
-
     form input, form button {
-        padding: 8px; /* کاهش فضای داخلی فیلدها */
+        padding: 8px;
         font-size: 0.8rem;
     }
 
     footer {
-        font-size: 0.6rem; /* کاهش بیشتر اندازه متن در دستگاه‌های کوچک‌تر */
+        font-size: 0.6rem;
     }
 }
