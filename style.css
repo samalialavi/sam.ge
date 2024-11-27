@@ -90,7 +90,6 @@ footer {
     color: #555;
     border-top: 1px solid #ddd;
     width: 100%; /* عرض کامل */
-    max-width: 800px; /* محدود کردن عرض فوتر */
     margin: 0 auto; /* قرار دادن در مرکز صفحه */
     border-radius: 8px; /* گرد کردن گوشه‌ها (اختیاری) */
 }
