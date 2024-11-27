@@ -15,45 +15,15 @@
         </div>
         <div class="right">
             <h2>Free Domain Name Inquiry</h2>
-            <form id="domainInquiryForm">
-                <input type="text" id="name" placeholder="Your name (required)" required>
-                <input type="email" id="email" placeholder="Your email address (required)" required>
-                <input type="number" id="offer" placeholder="Your offer in USD (optional)">
-                <input type="text" id="antiSpamAnswer" placeholder="Anti spam question: 23 + 11 = ?" required>
+            <form id="domainInquiryForm" action="https://script.google.com/macros/s/AKfycbxUnC6e_oZjvlz8VJhk4fcslbC-EJb3IkJBk7nsiBPl_low_6FQ7OsCedsvtEpwWE2H/exec" method="POST">
+                <input type="text" name="name" placeholder="Your name (required)" required>
+                <input type="email" name="email" placeholder="Your email address (required)" required>
+                <input type="number" name="offer" placeholder="Your offer in USD (optional)">
+                <input type="text" name="antiSpamAnswer" placeholder="Anti spam question: 23 + 11 = ?" required>
                 <button type="submit">Submit</button>
             </form>
             <p>Your information will be used exclusively to respond to your inquiry. We respect your privacy.</p>
         </div>
     </div>
-
-    <script>
-        document.getElementById('domainInquiryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // داده‌های فرم را جمع‌آوری کنید
-            const data = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                offer: document.getElementById('offer').value,
-                antiSpamAnswer: document.getElementById('antiSpamAnswer').value
-            };
-
-            // درخواست POST به وب اپلیکیشن Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbxUnC6e_oZjvlz8VJhk4fcslbC-EJb3IkJBk7nsiBPl_low_6FQ7OsCedsvtEpwWE2H/exec', {  // آدرس وب اپلیکیشن خود را اینجا قرار دهید
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert('Form successfully submitted!');
-            })
-            .catch((error) => {
-                alert('Error: ' + error);
-            });
-        });
-    </script>
 </body>
 </html>
