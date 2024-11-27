@@ -52,30 +52,18 @@ document.getElementById('domainInquiryForm').addEventListener('submit', function
 });
 
 // دریافت اطلاعات بازدیدکننده
-fetch('https://ipinfo.io/json?token=90e5f69ff24d4c') // جایگزین کردن YOUR_API_TOKEN با توکن API
+// دریافت اطلاعات بازدیدکننده با استفاده از API ipinfo
+fetch('https://ipinfo.io/json?token=90e5f69ff24d4c')
     .then(response => response.json())
     .then(data => {
         const ipAddress = data.ip;
-        const location = `${data.city}, ${data.region}, ${data.country}`; // موقعیت جغرافیایی
+        const location = `${data.city}, ${data.region}, ${data.country}`; // موقعیت جغرافیایی بازدیدکننده
 
-        // ارسال اطلاعات به Google Apps Script
-        fetch('https://script.google.com/macros/s/AKfycbyIr1mqSDX7nun5mYT2lXiKvYyV6xa_ChmEjKXCHdX1Mom2on8tBflvMITKIiXvuLY18g/exec', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
-                domain: window.location.hostname, // نام دامنه
-                userAgent: navigator.userAgent,
-                ipAddress: ipAddress,
-                referrer: document.referrer || "Direct Access",
-                language: navigator.language,
-                resolution: `${window.screen.width}x${window.screen.height}`,
-                location: location
-            }),
-        })
+        // ارسال اطلاعات بازدیدکننده به Google Apps Script
+        fetch(`https://script.google.com/macros/s/AKfycbyIr1mqSDX7nun5mYT2lXiKvYyV6xa_ChmEjKXCHdX1Mom2on8tBflvMITKIiXvuLY18g/exec?domain=${encodeURIComponent(window.location.hostname)}&userAgent=${encodeURIComponent(navigator.userAgent)}&ipAddress=${encodeURIComponent(ipAddress)}&referrer=${encodeURIComponent(document.referrer || "Direct Access")}&language=${encodeURIComponent(navigator.language)}&resolution=${encodeURIComponent(window.screen.width + 'x' + window.screen.height)}&location=${encodeURIComponent(location)}`)
         .then(response => response.text())
         .then(data => console.log('Log saved:', data))
         .catch(error => console.error('Error:', error));
-    });
+    })
+    .catch(error => console.error('Error fetching IP info:', error));
 
