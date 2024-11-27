@@ -20,7 +20,11 @@
                 <input type="text" id="name" placeholder="Your name (required)" required>
                 <input type="email" id="email" placeholder="Your email address (required)" required>
                 <input type="number" id="offer" placeholder="Your offer in USD (optional)">
-                <input type="text" id="antiSpamAnswer" placeholder="Anti spam question: " required>
+                <div id="captchaContainer">
+                    <!-- سوال امنیتی -->
+                    <label id="captchaQuestion"></label>
+                    <input type="text" id="antiSpamAnswer" placeholder="Your answer" required>
+                </div>
                 <button type="submit">Submit</button>
             </form>
             <p id="responseMessage" style="display: none; color: green;">Your form has been successfully submitted!</p>
@@ -28,32 +32,26 @@
     </div>
 
     <script>
+        // تولید اعداد تصادفی برای سوال امنیتی
+        const num1 = Math.floor(Math.random() * 10) + 1; // عدد اول
+        const num2 = Math.floor(Math.random() * 10) + 1; // عدد دوم
+        const correctAnswer = num1 + num2; // پاسخ صحیح
 
-        const securityQuestions = [
-            { question: "5 + 3", answer: "8" },
-            { question: "12 - 4", answer: "8" },
-            { question: "15 / 3", answer: "5" },
-            { question: "6 * 2", answer: "12" }
-        ];
+        // نمایش سوال امنیتی در فرم
+        document.getElementById('captchaQuestion').textContent = `What is ${num1} + ${num2}?`;
 
-
-        const randomQuestion = securityQuestions[Math.floor(Math.random() * securityQuestions.length)];
-        document.getElementById('antiSpamAnswer').placeholder = `Anti spam question: ${randomQuestion.question}`;
-
-
+        // ارسال فرم
         document.getElementById('domainInquiryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // جلوگیری از ارسال پیش‌فرض
 
-
-            const userAnswer = document.getElementById('antiSpamAnswer').value.trim();
-
-
-            if (userAnswer !== randomQuestion.answer) {
+            // بررسی پاسخ
+            const userAnswer = parseInt(document.getElementById('antiSpamAnswer').value.trim());
+            if (userAnswer !== correctAnswer) {
                 alert("Anti-spam answer is incorrect!");
                 return;
             }
 
-
+            // داده‌های فرم
             const data = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
@@ -61,7 +59,7 @@
                 antiSpamAnswer: userAnswer
             };
 
-
+            // ارسال داده‌ها به سرور
             fetch('https://script.google.com/macros/s/AKfycbxUnC6e_oZjvlz8VJhk4fcslbC-EJb3IkJBk7nsiBPl_low_6FQ7OsCedsvtEpwWE2H/exec', {
                 method: 'POST',
                 headers: {
