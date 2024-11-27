@@ -22,7 +22,7 @@
                 <input type="text" id="antiSpamAnswer" placeholder="Anti spam question: 23 + 11 = ?" required>
                 <button type="submit">Submit</button>
             </form>
-            <p id="responseMessage" style="color: green; display: none;">Your form has been successfully submitted!</p>
+            <p id="responseMessage" style="display: none; color: green;">Your form has been successfully submitted!</p>
         </div>
     </div>
 
@@ -34,12 +34,12 @@
             const data = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
-                offer: document.getElementById('offer').value,
+                offer: document.getElementById('offer').value || 'No offer',
                 antiSpamAnswer: document.getElementById('antiSpamAnswer').value
             };
 
-            // درخواست POST به وب اپلیکیشن Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbxUnC6e_oZjvlz8VJhk4fcslbC-EJb3IkJBk7nsiBPl_low_6FQ7OsCedsvtEpwWE2H/exec', {
+            // ارسال درخواست POST به Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbxUnC6e_oZjvlz8VJhk4fcslbC-EJb3IkJBk7nsiBPl_low_6FQ7OsCedsvtEpwWE2H/exec', { // آدرس وب اپلیکیشن خود را وارد کنید
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -48,17 +48,17 @@
             })
             .then(response => response.json())
             .then(data => {
-                if (data.status === "success") {
+                if (data.status === 'success') {
                     // نمایش پیام موفقیت
                     const responseMessage = document.getElementById('responseMessage');
-                    responseMessage.style.display = "block";
-                    responseMessage.textContent = "Your form has been successfully submitted!";
+                    responseMessage.style.display = 'block';
+                    responseMessage.textContent = 'Your form has been successfully submitted!';
                 } else {
                     alert('Something went wrong. Please try again.');
                 }
             })
-            .catch((error) => {
-                alert('Error: ' + error);
+            .catch(error => {
+                alert('Error: ' + error.message);
             });
         });
     </script>
