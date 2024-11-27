@@ -5,6 +5,16 @@ body {
     padding: 0;
     background-color: #f8f8f8;
     color: #333;
+    min-height: 100vh; /* حداقل ارتفاع صفحه */
+    display: flex;
+    flex-direction: column; /* چینش به صورت ستونی */
+}
+
+.wrapper {
+    flex: 1; /* بخش اصلی صفحه */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* فاصله بین محتوای اصلی و فوتر */
 }
 
 .container {
@@ -45,22 +55,17 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    align-items: center; /* تراز کردن تمام عناصر به مرکز */
+    align-items: center;
 }
 
 form input, form button {
-    width: 100%; /* عرض کامل برای کادرها و دکمه */
-    max-width: 300px; /* محدود کردن عرض به 300px */
+    width: 100%;
+    max-width: 300px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
     text-align: left;
-}
-
-form input::placeholder {
-    color: #888;
-    font-size: 0.9rem;
 }
 
 form button {
@@ -69,63 +74,19 @@ form button {
     border: none;
     cursor: pointer;
     transition: 0.3s ease;
-    text-align: center; /* وسط‌چین کردن متن داخل دکمه */
-    font-weight: bold;
+    text-align: center;
 }
 
 form button:hover {
     background-color: #0056b3;
 }
 
-p {
-    font-size: 0.9rem;
-    color: #666;
-}
-
 /* استایل برای Footer */
 footer {
     text-align: center;
-    margin-top: 20px;
     padding: 10px 20px;
     background-color: #f1f1f1;
     font-size: 0.8rem;
     color: #555;
     border-top: 1px solid #ddd;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* واکنش‌گرایی */
-@media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column; /* تغییر به حالت ستونی */
-        padding: 15px;
-        gap: 10px;
-    }
-
-    form input, form button {
-        width: 90%; /* عرض کادرها در موبایل به 90% عرض صفحه محدود می‌شود */
-    }
-
-    footer {
-        font-size: 0.7rem; /* کاهش اندازه متن در موبایل */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .container {
-        padding: 10px;
-        gap: 5px;
-    }
-
-    form input, form button {
-        padding: 8px;
-        font-size: 0.8rem;
-    }
-
-    footer {
-        font-size: 0.6rem;
-    }
 }
