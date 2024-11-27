@@ -49,7 +49,7 @@ form {
 }
 
 form input, form button {
-    width: 300px; /* کاهش عرض کادرها و دکمه */
+    width: 800px; /* هماهنگ‌سازی عرض */
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -68,6 +68,7 @@ form button {
     border: none;
     cursor: pointer;
     transition: 0.3s ease;
+    text-align: center; /* وسط‌چین کردن متن داخل دکمه */
 }
 
 form button:hover {
