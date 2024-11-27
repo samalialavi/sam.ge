@@ -28,7 +28,7 @@
     </div>
 
     <script>
-        // سوالات امنیتی
+
         const securityQuestions = [
             { question: "5 + 3", answer: "8" },
             { question: "12 - 4", answer: "8" },
@@ -36,24 +36,24 @@
             { question: "6 * 2", answer: "12" }
         ];
 
-        // انتخاب سوال امنیتی به صورت تصادفی
+
         const randomQuestion = securityQuestions[Math.floor(Math.random() * securityQuestions.length)];
         document.getElementById('antiSpamAnswer').placeholder = `Anti spam question: ${randomQuestion.question}`;
 
-        // ارسال فرم
+
         document.getElementById('domainInquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // دریافت مقدار پاسخ سوال امنیتی
+
             const userAnswer = document.getElementById('antiSpamAnswer').value.trim();
 
-            // بررسی پاسخ
+
             if (userAnswer !== randomQuestion.answer) {
                 alert("Anti-spam answer is incorrect!");
                 return;
             }
 
-            // داده‌های فرم
+
             const data = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
@@ -61,7 +61,7 @@
                 antiSpamAnswer: userAnswer
             };
 
-            // ارسال داده‌ها
+
             fetch('https://script.google.com/macros/s/AKfycbxUnC6e_oZjvlz8VJhk4fcslbC-EJb3IkJBk7nsiBPl_low_6FQ7OsCedsvtEpwWE2H/exec', {
                 method: 'POST',
                 headers: {
