@@ -52,14 +52,14 @@ document.getElementById('domainInquiryForm').addEventListener('submit', function
 });
 
 // دریافت اطلاعات بازدیدکننده
-fetch('https://ipinfo.io/json?token=YOUR_API_TOKEN') // جایگزین کردن YOUR_API_TOKEN با توکن API
+fetch('https://ipinfo.io/json?token=90e5f69ff24d4c') // جایگزین کردن YOUR_API_TOKEN با توکن API
     .then(response => response.json())
     .then(data => {
         const ipAddress = data.ip;
         const location = `${data.city}, ${data.region}, ${data.country}`; // موقعیت جغرافیایی
 
         // ارسال اطلاعات به Google Apps Script
-        fetch('YOUR_WEB_APP_URL', {
+        fetch('https://script.google.com/macros/s/AKfycbyIr1mqSDX7nun5mYT2lXiKvYyV6xa_ChmEjKXCHdX1Mom2on8tBflvMITKIiXvuLY18g/exec', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
