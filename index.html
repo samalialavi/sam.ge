@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sam.ge - For Sale</title>
+    <!-- لینک‌دهی به فایل CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- لینک‌دهی به فونت Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- بخش اطلاعات فروش دامنه -->
+        <div class="left">
+            <h1>sam.ge is For Sale!</h1>
+            <p>Own this exceptional domain and elevate your online presence to the next level.</p>
+            <p>Fill out the form, and we’ll respond promptly with more details.</p>
+        </div>
+        <!-- بخش فرم تماس -->
+        <div class="right">
+            <h2>Free Domain Name Inquiry</h2>
+            <form id="domainForm">
+                <input type="text" id="name" placeholder="Your name (required)" required>
+                <input type="email" id="email" placeholder="Your email address (required)" required>
+                <input type="number" id="offer" placeholder="Your offer in USD (optional)">
+                <input type="text" id="antiSpam" placeholder="" required>
+                <button type="submit">Submit</button>
+            </form>
+            <p>Your information will be used exclusively to respond to your inquiry. We respect your privacy.</p>
+        </div>
+    </div>
+
+    <!-- اسکریپت برای مدیریت سؤال امنیتی و ارسال فرم -->
+    <script>
+        // ایجاد سؤال امنیتی تصادفی
+        const num1 = Math.floor(Math.random() * 20) + 1; // عدد اول بین 1 تا 20
+        const num2 = Math.floor(Math.random() * 20) + 1; // عدد دوم بین 1 تا 20
+        const question = `What is ${num1} + ${num2}?`;
+        document.getElementById('antiSpam').setAttribute('placeholder', question);
+
+        // اضافه کردن پاسخ صحیح به داده‌های فرم
+        const form = document.getElementById('domainForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // دریافت پاسخ کاربر و بررسی درست بودن آن
+            const userAnswer = parseInt(document.getElementById('antiSpam').value);
+            if (userAnswer !== num1 + num2) {
+                alert('Incorrect answer to the security question!');
+                return; // ارسال فرم متوقف می‌شود
+            }
+
+            // جمع‌آوری اطلاعات فرم
+            const data = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                offer: document.getElementById('offer').value,
+                antiSpam: userAnswer
+            };
+
+            try {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbxZ95FtvjXCEsyo5tsyre3coWlwksufg6wFSPx55is9wNbSkHOMYqWoCv5l1vGQOIxMsw/exec', { // اینجا Web App URL را جایگزین کنید
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('Form submitted successfully!');
+                    form.reset();
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
