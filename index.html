@@ -5,49 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit Your Details</title>
     <style>
-        /* استایل برای بدنه */
+        /* استایل کلی بدنه */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f0f4f8;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* استایل کانتینر اصلی */
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        /* استایل برای هدر */
+        .header {
+            background: #007bff;
+            color: white;
             text-align: center;
+            padding: 20px;
         }
 
-        /* استایل برای تیتر اصلی */
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
         }
 
-        /* استایل برای توضیحات */
-        p {
-            color: #666;
-            margin-bottom: 20px;
+        .header p {
+            margin: 5px 0 0;
+            font-size: 1rem;
         }
 
-        /* استایل برای فرم */
+        /* استایل برای iframe */
+        .form-container {
+            padding: 20px;
+        }
+
         iframe {
             width: 100%;
-            max-width: 640px;
-            height: 800px;
-            border: 1px solid #ddd;
+            height: 600px;
+            border: none;
             border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* متن پایین فرم */
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: #f0f4f8;
+            font-size: 0.9rem;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <h1>Submit Your Details</h1>
-    <p>Please fill out the form below to share your details with us:</p>
+    <div class="container">
+        <!-- هدر -->
+        <div class="header">
+            <h1>Submit Your Details</h1>
+            <p>Fill out the form below and let us know your details.</p>
+        </div>
 
-    <!-- جاسازی فرم گوگل -->
-    <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfpoJYnKB_x6vpdkvpuarHjQJDb8UcDb61GXN0OuETmNRkniw/viewform?embedded=true"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0">
-        Loading…
-    </iframe>
+        <!-- فرم گوگل -->
+        <div class="form-container">
+            <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfpoJYnKB_x6vpdkvpuarHjQJDb8UcDb61GXN0OuETmNRkniw/viewform?embedded=true"
+                allowfullscreen>
+                Loading…
+            </iframe>
+        </div>
+
+        <!-- متن پایین -->
+        <div class="footer">
+            Powered by Google Forms | Privacy Protected
+        </div>
+    </div>
 </body>
 </html>
