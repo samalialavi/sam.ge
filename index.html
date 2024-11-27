@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sam.ge - For Sale</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -20,11 +20,7 @@
                 <input type="text" id="name" placeholder="Your name (required)" required>
                 <input type="email" id="email" placeholder="Your email address (required)" required>
                 <input type="number" id="offer" placeholder="Your offer in USD (optional)">
-                <div id="captchaContainer">
-                    <!-- سوال امنیتی -->
-                    <label id="captchaQuestion"></label>
-                    <input type="text" id="antiSpamAnswer" placeholder="Your answer" required>
-                </div>
+                <input type="text" id="antiSpamAnswer" placeholder="Security Question: Loading..." required>
                 <button type="submit">Submit</button>
             </form>
             <p id="responseMessage" style="display: none; color: green;">Your form has been successfully submitted!</p>
@@ -37,8 +33,8 @@
         const num2 = Math.floor(Math.random() * 10) + 1; // عدد دوم
         const correctAnswer = num1 + num2; // پاسخ صحیح
 
-        // نمایش سوال امنیتی در فرم
-        document.getElementById('captchaQuestion').textContent = `What is ${num1} + ${num2}?`;
+        // نمایش سوال امنیتی در کادر پاسخ
+        document.getElementById('antiSpamAnswer').placeholder = `What is ${num1} + ${num2}?`;
 
         // ارسال فرم
         document.getElementById('domainInquiryForm').addEventListener('submit', function(e) {
