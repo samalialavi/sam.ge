@@ -1,5 +1,6 @@
+/* استفاده از فونت مینیمال انگلیسی */
 body {
-    font-family: 'Vazirmatn', Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
@@ -54,6 +55,11 @@ form input, form button {
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
+}
+
+form input::placeholder {
+    color: #888;
+    font-size: 0.9rem;
 }
 
 form button {
