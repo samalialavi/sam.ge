@@ -92,13 +92,12 @@ form button:hover {
 /* استایل برای Footer */
 footer {
     text-align: center;
-    padding: 10px 20px; /* padding دست‌نخورده */
-    background-color: #f1f1f1; /* رنگ طوسی */
+    padding: 5px 20px; /* برای ارتفاع کمتر */
+    background-color: #f1f1f1;
     font-size: 0.8rem;
     color: #555;
     border-top: 1px solid #ddd;
-    width: 80%; /* کاهش عرض به 80 درصد صفحه */
-    margin: 0 auto; /* قرار دادن فوتر در مرکز */
-    border-radius: 8px; /* گرد کردن گوشه‌ها (اختیاری) */
-    box-sizing: border-box;
+    width: 100%; /* طول کامل صفحه */
+    margin: 0; /* حذف فاصله اضافی */
+    box-sizing: border-box; /* مدیریت بهتر عرض */
 }
