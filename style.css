@@ -92,7 +92,7 @@ form button:hover {
 /* استایل برای Footer */
 footer {
     text-align: center;
-    padding: 1px 5px; /* برای ارتفاع کمتر */
+    padding: 0px 1px; /* برای ارتفاع کمتر */
     background-color: #f1f1f1;
     font-size: 0.8rem;
     color: #555;
