@@ -19,10 +19,10 @@
             <div class="right">
                 <h2>Free Domain Name Inquiry</h2>
                 <form id="domainInquiryForm">
-                    <input type="text" id="name" placeholder="Your name (required)" required>
-                    <input type="email" id="email" placeholder="Your email address (required)" required>
-                    <input type="number" id="offer" placeholder="Your offer in USD (optional)">
-                    <input type="number" id="antiSpamAnswer" placeholder="Security Question: Loading..." required>
+                    <input type="text" id="name" placeholder="Your name (required)" required autocomplete="name">
+                    <input type="email" id="email" placeholder="Your email address (required)" required autocomplete="email">
+                    <input type="number" id="offer" placeholder="Your offer in USD (optional)" autocomplete="off">
+                    <input type="number" id="antiSpamAnswer" placeholder="Security Question: Loading..." required autocomplete="off">
                     <button type="submit">Submit</button>
                 </form>
                 <p id="responseMessage" style="display: none; color: green;">Your form has been successfully submitted!</p>
