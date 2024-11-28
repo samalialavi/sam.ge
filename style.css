@@ -1,5 +1,5 @@
 /* استفاده از فونت مینیمال انگلیسی */
-body {
+html, body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -8,6 +8,8 @@ body {
     min-height: 100vh; /* حداقل ارتفاع صفحه */
     display: flex;
     flex-direction: column; /* چینش به صورت ستونی */
+    overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+    box-sizing: border-box; /* تنظیم box-sizing */
 }
 
 .wrapper {
@@ -15,10 +17,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* فاصله بین محتوای اصلی و فوتر */
+    max-width: 100%; /* جلوگیری از اسکرول افقی */
 }
 
 .container {
     display: flex;
+    flex-wrap: wrap; /* اضافه کردن wrap برای جلوگیری از خروج محتوا */
     max-width: 800px;
     margin: 50px auto;
     gap: 20px;
@@ -26,11 +30,15 @@ body {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    overflow: hidden; /* جلوگیری از خروج محتوای داخلی */
 }
 
 .left, .right {
     flex: 1;
     padding: 20px;
+    max-width: 100%; /* جلوگیری از تجاوز عرض */
+    box-sizing: border-box;
 }
 
 .left h1 {
@@ -90,6 +98,7 @@ footer {
     color: #555;
     border-top: 1px solid #ddd;
     width: 100%; /* عرض کامل */
-    margin: 0 auto; /* قرار دادن در مرکز صفحه */
+    margin: 0; /* حذف فاصله اضافی */
     border-radius: 8px; /* گرد کردن گوشه‌ها (اختیاری) */
+    box-sizing: border-box; /* اطمینان از عدم تجاوز به عرض */
 }
