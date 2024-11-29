@@ -1,9 +1,8 @@
-/* تنظیمات کلی صفحه */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* حذف اسکرول افقی */
+    overflow-x: hidden; 
     display: flex;
     flex-direction: column;
     font-family: 'Poppins', Arial, sans-serif;
@@ -11,7 +10,6 @@ html, body {
     color: #333;
 }
 
-/* کانتینر اصلی */
 .wrapper {
     display: flex;
     justify-content: center;
@@ -19,7 +17,6 @@ html, body {
     flex: 1;
 }
 
-/* کانتینر متن و فرم */
 .container {
     display: flex;
     flex-direction: row;
@@ -34,7 +31,6 @@ html, body {
     box-sizing: border-box;
 }
 
-/* ستون‌ها */
 .left, .right {
     flex: 1;
     padding: 15px;
@@ -50,31 +46,29 @@ html, body {
     line-height: 1.6;
 }
 
-/* فرم */
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: center; /* وسط‌چین کردن محتوا */
+    align-items: center; 
 }
 
 form input, form button {
-    width: 100%; /* عرض برابر برای تمام فیلدها و دکمه */
-    max-width: 300px; /* حداکثر عرض */
-    padding: 12px; /* پدینگ مشابه */
-    margin: 0 auto; /* وسط‌چین کردن */
+    width: 100%; 
+    max-width: 300px; 
+    padding: 12px; 
+    margin: 0 auto; 
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
-    box-sizing: border-box; /* اطمینان از لحاظ پدینگ در عرض */
-    display: block; /* بلوکی کردن */
+    box-sizing: border-box; 
+    display: block; 
 }
 
-/* تغییرات مخصوص دکمه Submit */
 form button {
     background-color: #007bff;
     color: white;
-    border: 1px solid #ddd; /* مشابه با ورودی‌ها */
+    border: 1px solid #ddd;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -83,7 +77,6 @@ form button:hover {
     background-color: #0056b3;
 }
 
-/* حذف اسپینر از فیلدهای عددی */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -91,17 +84,15 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="number"] {
-    -moz-appearance: textfield; /* برای فایرفاکس */
+    -moz-appearance: textfield; 
 }
 
-/* تغییر استایل هنگام فوکوس */
 input:focus, button:focus {
     outline: none;
     border: 2px solid #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* فوتر */
 footer {
     text-align: center;
     padding: 4px 5px;
@@ -114,7 +105,6 @@ footer {
     box-sizing: border-box;
 }
 
-/* استایل برای موبایل‌ها */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
