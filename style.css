@@ -1,6 +1,6 @@
 /* تنظیمات کلی صفحه */
 html, body {
-    height: 100%; /* ارتفاع کامل برای کل صفحه */
+    height: 100%; /* ارتفاع کامل صفحه */
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* حذف اسکرول افقی */
@@ -33,7 +33,7 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    overflow: hidden; /* جلوگیری از اسکرول اضافی */
+    overflow: hidden; /* جلوگیری از ایجاد اسکرول اضافی */
 }
 
 /* ستون‌ها */
@@ -87,14 +87,14 @@ form button:hover {
 /* فوتر */
 footer {
     text-align: center;
-    padding: 5px 10px; /* کاهش padding برای کاهش ارتفاع طوسی */
+    padding: 5px 10px; /* کاهش ارتفاع طوسی */
     background-color: #f1f1f1;
-    font-size: 0.7rem; /* کاهش اندازه فونت */
+    font-size: 0.7rem; /* کاهش اندازه متن */
     color: #555;
     border-top: 1px solid #ddd;
-    width: 100%;
-    margin-top: auto; /* همیشه در پایین صفحه قرار بگیرد */
-    box-sizing: border-box; /* اطمینان از عدم تجاوز عرض */
+    width: 100%; /* عرض کامل */
+    margin-top: auto; /* همیشه در پایین صفحه */
+    box-sizing: border-box; /* جلوگیری از عرض اضافی */
 }
 
 /* استایل برای موبایل‌ها */
@@ -129,6 +129,6 @@ footer {
 
     footer {
         font-size: 0.6rem; /* کوچک‌تر کردن متن فوتر */
-        padding: 3px 10px; /* کاهش بیشتر padding */
+        padding: 3px 10px; /* کاهش بیشتر ارتفاع طوسی */
     }
 }
