@@ -55,21 +55,17 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center; /* وسط‌چین کردن محتوا */
 }
 
 form input, form button {
-    width: 100%;
+    width: 90%; /* کاهش عرض باکس‌ها */
     padding: 12px;
+    margin: 0 auto; /* وسط‌چین کردن */
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
-}
-
-/* تغییر استایل هنگام فوکوس */
-input:focus, button:focus {
-    outline: none; /* حذف حاشیه پیش‌فرض مرورگر */
-    border: 2px solid #007bff; /* تغییر رنگ حاشیه به آبی */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* ایجاد افکت سایه */
+    display: block; /* اطمینان از بلوکی بودن عناصر */
 }
 
 form button {
@@ -82,6 +78,13 @@ form button {
 
 form button:hover {
     background-color: #0056b3;
+}
+
+/* تغییر استایل هنگام فوکوس */
+input:focus, button:focus {
+    outline: none;
+    border: 2px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 /* فوتر */
