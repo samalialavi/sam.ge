@@ -42,7 +42,7 @@ document.getElementById('domainInquiryForm').addEventListener('submit', function
         if (data.status === 'success') {
             responseContainer.style.display = 'block';
             responseMessage.style.color = 'green';
-            responseMessage.textContent = 'Your form has been successfully submitted!';
+            responseMessage.textContent = 'Thank you! Your inquiry has been submitted. We will get back to you shortly.';
         } else {
             responseContainer.style.display = 'block';
             responseMessage.style.color = 'red';
