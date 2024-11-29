@@ -59,13 +59,15 @@ form {
 }
 
 form input, form button {
-    width: 90%; /* کاهش عرض باکس‌ها */
-    padding: 12px;
+    width: 100%; /* عرض برابر برای تمام ورودی‌ها و دکمه */
+    max-width: 300px; /* حداکثر عرض */
+    padding: 12px; /* پدینگ برای هماهنگی */
     margin: 0 auto; /* وسط‌چین کردن */
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
-    display: block; /* اطمینان از بلوکی بودن عناصر */
+    box-sizing: border-box; /* در نظر گرفتن پدینگ در محاسبه عرض */
+    display: block; /* بلوکی کردن عناصر */
 }
 
 form button {
