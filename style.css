@@ -87,7 +87,7 @@ form button:hover {
 /* فوتر */
 footer {
     text-align: center;
-    padding: 5px 10px; /* کاهش ارتفاع طوسی */
+    padding: 5px 5px; /* کاهش ارتفاع طوسی */
     background-color: #f1f1f1;
     font-size: 0.7rem; /* کاهش اندازه متن */
     color: #555;
