@@ -61,7 +61,7 @@ form {
 form input, form button {
     width: 100%; /* عرض برابر برای تمام ورودی‌ها و دکمه */
     max-width: 300px; /* حداکثر عرض */
-    padding: 12px; /* پدینگ برای هماهنگی */
+    padding: 12px;
     margin: 0 auto; /* وسط‌چین کردن */
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -70,16 +70,25 @@ form input, form button {
     display: block; /* بلوکی کردن عناصر */
 }
 
+/* فاصله بیشتر برای دکمه Submit */
 form button {
     background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 10px; /* فاصله بین دکمه و آخرین ورودی */
 }
 
+/* تغییر استایل هنگام hover روی دکمه */
 form button:hover {
     background-color: #0056b3;
+}
+
+/* افکت hover برای ورودی‌ها */
+form input:hover {
+    border-color: #007bff; /* تغییر رنگ حاشیه */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* اضافه کردن سایه */
 }
 
 /* تغییر استایل هنگام فوکوس */
