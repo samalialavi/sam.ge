@@ -78,7 +78,7 @@ fetchWithTimeout('https://ipinfo.io/json?token=90e5f69ff24d4c', {}, 5000)
 
         // ارسال اطلاعات بازدیدکننده به Google Apps Script
         return fetchWithTimeout(
-            `https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec?domain=${encodeURIComponent(
+            `https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbyIr1mqSDX7nun5mYT2lXiKvYyV6xa_ChmEjKXCHdX1Mom2on8tBflvMITKIiXvuLY18g/exec/exec?domain=${encodeURIComponent(
                 window.location.hostname
             )}&userAgent=${encodeURIComponent(
                 navigator.userAgent
