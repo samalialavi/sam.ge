@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acquire this premium domain to elevate your online presence effortlessly. Contact us for more details!">
     <title>sam.ge - For Sale</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -10,31 +11,77 @@
 </head>
 <body>
     <div class="wrapper">
+        <!-- کانتینر اصلی -->
         <div class="container">
+            <!-- متن سمت چپ -->
             <div class="left">
-                <h1>sam.ge is For Sale!</h1>
-                <p>Own this exceptional domain and Take your online presence to the next level with this unique domain.</p>
+                <h1>Exclusive Opportunity: sam.ge is For Sale!</h1>
+                <p>Acquire this premium domain to elevate your online presence effortlessly.</p>
                 <p>Fill out the form, and we’ll respond promptly with more details.</p>
             </div>
+            
+            <!-- فرم سمت راست -->
             <div class="right">
                 <h2>Free Domain Name Inquiry</h2>
                 <form id="domainInquiryForm">
                     <input type="text" id="name" placeholder="Your name (required)" required autocomplete="name">
                     <input type="email" id="email" placeholder="Your email address (required)" required autocomplete="email">
                     <input type="number" id="offer" placeholder="Your offer in USD (optional)" autocomplete="off">
-                    <input type="number" id="antiSpamAnswer" placeholder="Security Question: Loading..." required autocomplete="off">
+                    <input type="number" id="antiSpamAnswer" placeholder="Solve the security question below:" required autocomplete="off">
                     <button type="submit">Submit</button>
                 </form>
-                <p id="responseMessage" style="display: none; color: green;">Your form has been successfully submitted!</p>
+                <p id="responseMessage" style="display: none; color: green;">Thank you! Your inquiry has been submitted. We will get back to you shortly.</p>
             </div>
         </div>
-
-        <!-- Footer -->
-        <footer>
-            <p>© 2024 SAM Group</p>
-        </footer>
     </div>
 
-    <script src="script.js"></script>
+    <!-- فوتر -->
+    <footer>
+        <p>© 2024 SAM Group</p>
+    </footer>
+
+    <script>
+        // تولید سوال امنیتی
+        const num1 = Math.floor(Math.random() * 10) + 1;
+        const num2 = Math.floor(Math.random() * 10) + 1;
+        const correctAnswer = num1 + num2;
+        document.getElementById('antiSpamAnswer').placeholder = `What is ${num1} + ${num2}?`;
+
+        // ارسال فرم
+        document.getElementById('domainInquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const userAnswer = parseInt(document.getElementById('antiSpamAnswer').value.trim());
+            if (userAnswer !== correctAnswer) {
+                alert("The security question answer is incorrect!");
+                return;
+            }
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                offer: document.getElementById('offer').value || "No offer",
+                antiSpamAnswer: userAnswer
+            };
+            fetch('https://example.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    const responseMessage = document.getElementById('responseMessage');
+                    responseMessage.style.display = 'block';
+                    responseMessage.textContent = 'Thank you! Your inquiry has been submitted. We will get back to you shortly.';
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            })
+            .catch(error => {
+                alert('Error: ' + error.message);
+            });
+        });
+    </script>
 </body>
 </html>
