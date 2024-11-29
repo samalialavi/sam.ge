@@ -59,36 +59,39 @@ form {
 }
 
 form input, form button {
-    width: 100%; /* عرض برابر برای تمام ورودی‌ها و دکمه */
+    width: 100%; /* عرض برابر برای تمام فیلدها و دکمه */
     max-width: 300px; /* حداکثر عرض */
-    padding: 12px;
+    padding: 12px; /* پدینگ مشابه */
     margin: 0 auto; /* وسط‌چین کردن */
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
-    box-sizing: border-box; /* در نظر گرفتن پدینگ در محاسبه عرض */
-    display: block; /* بلوکی کردن عناصر */
+    box-sizing: border-box; /* اطمینان از لحاظ پدینگ در عرض */
+    display: block; /* بلوکی کردن */
 }
 
-/* فاصله بیشتر برای دکمه Submit */
+/* تغییرات مخصوص دکمه Submit */
 form button {
     background-color: #007bff;
     color: white;
-    border: none;
+    border: 1px solid #ddd; /* مشابه با ورودی‌ها */
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-bottom: 10px; /* فاصله بین دکمه و آخرین ورودی */
 }
 
-/* تغییر استایل هنگام hover روی دکمه */
 form button:hover {
     background-color: #0056b3;
 }
 
-/* افکت hover برای ورودی‌ها */
-form input:hover {
-    border-color: #007bff; /* تغییر رنگ حاشیه */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* اضافه کردن سایه */
+/* حذف اسپینر از فیلدهای عددی */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* برای فایرفاکس */
 }
 
 /* تغییر استایل هنگام فوکوس */
