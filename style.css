@@ -65,6 +65,13 @@ form input, form button {
     font-size: 1rem;
 }
 
+/* تغییر استایل هنگام فوکوس */
+input:focus, button:focus {
+    outline: none; /* حذف حاشیه پیش‌فرض مرورگر */
+    border: 2px solid #007bff; /* تغییر رنگ حاشیه به آبی */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* ایجاد افکت سایه */
+}
+
 form button {
     background-color: #007bff;
     color: white;
