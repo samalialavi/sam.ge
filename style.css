@@ -1,8 +1,9 @@
 /* تنظیمات کلی صفحه */
 html, body {
-    height: 100%; /* ارتفاع کامل صفحه */
+    height: 100%; /* ارتفاع کامل برای کل صفحه */
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* حذف اسکرول افقی */
     display: flex;
     flex-direction: column; /* ترتیب عمودی */
     font-family: 'Poppins', Arial, sans-serif;
@@ -23,7 +24,7 @@ html, body {
 .container {
     display: flex;
     flex-direction: row; /* پیش‌فرض برای دسکتاپ */
-    max-width: 800px;
+    max-width: 800px; /* محدودیت عرض */
     width: 95%; /* عرض تطبیقی */
     margin: 20px auto;
     gap: 20px;
@@ -32,6 +33,7 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    overflow: hidden; /* جلوگیری از اسکرول اضافی */
 }
 
 /* ستون‌ها */
@@ -85,13 +87,14 @@ form button:hover {
 /* فوتر */
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 5px 10px; /* کاهش padding برای کاهش ارتفاع طوسی */
     background-color: #f1f1f1;
-    font-size: 0.8rem;
+    font-size: 0.7rem; /* کاهش اندازه فونت */
     color: #555;
     border-top: 1px solid #ddd;
-    width: 100%; /* عرض کامل */
+    width: 100%;
     margin-top: auto; /* همیشه در پایین صفحه قرار بگیرد */
+    box-sizing: border-box; /* اطمینان از عدم تجاوز عرض */
 }
 
 /* استایل برای موبایل‌ها */
@@ -125,7 +128,7 @@ footer {
     }
 
     footer {
-        font-size: 0.7rem; /* کوچک‌تر کردن متن فوتر */
-        padding: 5px; /* کاهش padding */
+        font-size: 0.6rem; /* کوچک‌تر کردن متن فوتر */
+        padding: 3px 10px; /* کاهش بیشتر padding */
     }
 }
