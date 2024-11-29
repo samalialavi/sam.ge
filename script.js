@@ -69,8 +69,18 @@ document.getElementById('domainInquiryForm').addEventListener('submit', function
         });
 });
 
+// تنظیم تایم‌اوت برای fetch
+const fetchWithTimeout = (url, options, timeout = 10000) => {
+    return Promise.race([
+        fetch(url, options),
+        new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('Request timed out')), timeout)
+        ),
+    ]);
+};
+
 // ارسال لاگ بازدیدکننده
-fetchWithTimeout('https://ipinfo.io/json?token=90e5f69ff24d4c', {}, 5000)
+fetchWithTimeout('https://ipinfo.io/json?token=90e5f69ff24d4c', {}, 10000)
     .then((response) => response.json())
     .then((data) => {
         const ipAddress = data.ip;
@@ -78,7 +88,7 @@ fetchWithTimeout('https://ipinfo.io/json?token=90e5f69ff24d4c', {}, 5000)
 
         // ارسال اطلاعات بازدیدکننده به Google Apps Script
         return fetchWithTimeout(
-            `https://script.google.com/macros/s/AKfycbyIr1mqSDX7nun5mYT2lXiKvYyV6xa_ChmEjKXCHdX1Mom2on8tBflvMITKIiXvuLY18g/exec/exec?domain=${encodeURIComponent(
+            `https://script.google.com/macros/s/AKfycbyIr1mqSDX7nun5mYT2lXiKvYyV6xa_ChmEjKXCHdX1Mom2on8tBflvMITKIiXvuLY18g/exec?domain=${encodeURIComponent(
                 window.location.hostname
             )}&userAgent=${encodeURIComponent(
                 navigator.userAgent
@@ -90,8 +100,9 @@ fetchWithTimeout('https://ipinfo.io/json?token=90e5f69ff24d4c', {}, 5000)
                 window.screen.width + 'x' + window.screen.height
             )}&location=${encodeURIComponent(location)}`,
             {},
-            5000
+            10000
         );
     })
     .then(() => console.log('Log saved successfully.'))
     .catch((error) => console.error('Error saving log:', error));
+
