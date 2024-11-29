@@ -1,21 +1,29 @@
-/* استایل اصلی */
-body {
-    font-family: 'Poppins', Arial, sans-serif;
+/* تنظیمات کلی برای صفحه */
+html, body {
+    height: 100%; /* ارتفاع کامل برای کل صفحه */
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column; /* ترتیب عمودی بین محتوا و فوتر */
+    font-family: 'Poppins', Arial, sans-serif;
     background-color: #f8f8f8;
     color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-/* کانتینر کلی */
+/* کانتینر اصلی */
+.wrapper {
+    flex: 1; /* اشغال فضای باقی‌مانده بین هدر و فوتر */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* وسط‌چین کردن محتوا */
+    align-items: center; /* وسط‌چین کردن عناصر */
+}
+
+/* کانتینر فرم و متن */
 .container {
     display: flex;
-    flex-direction: row; /* پیش‌فرض: ردیفی */
-    max-width: 800px;
+    flex-direction: row; /* پیش‌فرض: ردیفی برای دسکتاپ */
+    max-width: 800px; /* محدودیت عرض */
     width: 95%; /* عرض تطبیقی */
     margin: 20px auto;
     gap: 20px;
@@ -83,20 +91,20 @@ footer {
     color: #555;
     border-top: 1px solid #ddd;
     width: 100%;
-    margin-top: auto; /* فوتر همیشه به پایین منتقل شود */
+    margin-top: auto; /* انتقال فوتر به پایین صفحه */
 }
 
-/* استایل برای موبایل‌های کوچک‌تر از 400px */
-@media (max-width: 400px) {
+/* استایل موبایل (عرض کمتر از 768px) */
+@media (max-width: 768px) {
     .container {
         flex-direction: column; /* تغییر به حالت ستونی */
         align-items: center; /* وسط‌چین کردن عناصر */
-        padding: 15px; /* کاهش padding کانتینر */
+        padding: 15px; /* کاهش فضای داخلی کانتینر */
     }
 
     .left {
         order: 1; /* متن در بالا */
-        margin-bottom: 20px;
+        margin-bottom: 20px; /* فاصله زیر متن */
     }
 
     .right {
@@ -118,6 +126,31 @@ footer {
 
     footer {
         font-size: 0.7rem; /* کاهش اندازه متن فوتر */
-        padding: 5px;
+        padding: 5px; /* کاهش padding فوتر */
+    }
+}
+
+/* استایل برای موبایل‌های خیلی کوچک (عرض کمتر از 400px) */
+@media (max-width: 400px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .left h1 {
+        font-size: 1.2rem; /* کاهش بیشتر فونت تیتر */
+    }
+
+    .left p {
+        font-size: 0.8rem; /* کاهش بیشتر اندازه متن */
+    }
+
+    form input, form button {
+        font-size: 0.8rem; /* کوچک‌تر کردن فونت فرم */
+    }
+
+    footer {
+        font-size: 0.6rem; /* کوچک‌تر کردن متن فوتر */
     }
 }
