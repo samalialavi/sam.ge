@@ -1,5 +1,3 @@
-// script.js
-
 // تولید اعداد تصادفی برای سوال امنیتی
 const num1 = Math.floor(Math.random() * 10) + 1; // عدد اول
 const num2 = Math.floor(Math.random() * 10) + 1; // عدد دوم
@@ -38,32 +36,24 @@ document.getElementById('domainInquiryForm').addEventListener('submit', function
     })
     .then(response => response.json())
     .then(data => {
+        const responseContainer = document.getElementById('responseContainer');
+        const responseMessage = document.getElementById('responseMessage');
+
         if (data.status === 'success') {
-            const responseMessage = document.getElementById('responseMessage');
-            responseMessage.style.display = 'block';
+            responseContainer.style.display = 'block';
+            responseMessage.style.color = 'green';
             responseMessage.textContent = 'Your form has been successfully submitted!';
         } else {
-            alert('Something went wrong. Please try again.');
+            responseContainer.style.display = 'block';
+            responseMessage.style.color = 'red';
+            responseMessage.textContent = 'Something went wrong. Please try again.';
         }
     })
     .catch(error => {
-        alert('Error: ' + error.message);
+        const responseContainer = document.getElementById('responseContainer');
+        const responseMessage = document.getElementById('responseMessage');
+        responseContainer.style.display = 'block';
+        responseMessage.style.color = 'red';
+        responseMessage.textContent = `Error: ${error.message}`;
     });
 });
-
-// دریافت اطلاعات بازدیدکننده
-// دریافت اطلاعات بازدیدکننده با استفاده از API ipinfo
-fetch('https://ipinfo.io/json?token=90e5f69ff24d4c')
-    .then(response => response.json())
-    .then(data => {
-        const ipAddress = data.ip;
-        const location = `${data.city}, ${data.region}, ${data.country}`; // موقعیت جغرافیایی بازدیدکننده
-
-        // ارسال اطلاعات بازدیدکننده به Google Apps Script
-        fetch(`https://script.google.com/macros/s/AKfycbyIr1mqSDX7nun5mYT2lXiKvYyV6xa_ChmEjKXCHdX1Mom2on8tBflvMITKIiXvuLY18g/exec?domain=${encodeURIComponent(window.location.hostname)}&userAgent=${encodeURIComponent(navigator.userAgent)}&ipAddress=${encodeURIComponent(ipAddress)}&referrer=${encodeURIComponent(document.referrer || "Direct Access")}&language=${encodeURIComponent(navigator.language)}&resolution=${encodeURIComponent(window.screen.width + 'x' + window.screen.height)}&location=${encodeURIComponent(location)}`)
-        .then(response => response.text())
-        .then(data => console.log('Log saved:', data))
-        .catch(error => console.error('Error:', error));
-    })
-    .catch(error => console.error('Error fetching IP info:', error));
-
