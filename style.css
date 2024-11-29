@@ -1,11 +1,11 @@
 /* تنظیمات کلی صفحه */
 html, body {
-    height: 100%; /* ارتفاع کامل صفحه */
+    height: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* حذف اسکرول افقی */
     display: flex;
-    flex-direction: column; /* ترتیب عمودی */
+    flex-direction: column;
     font-family: 'Poppins', Arial, sans-serif;
     background-color: #f8f8f8;
     color: #333;
@@ -22,9 +22,9 @@ html, body {
 /* کانتینر متن و فرم */
 .container {
     display: flex;
-    flex-direction: row; /* پیش‌فرض برای دسکتاپ */
-    max-width: 800px; /* محدودیت عرض */
-    width: 95%; /* عرض تطبیقی */
+    flex-direction: row;
+    max-width: 800px;
+    width: 95%;
     margin: 20px auto;
     gap: 20px;
     padding: 20px;
@@ -32,23 +32,17 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    overflow: hidden; /* جلوگیری از ایجاد اسکرول اضافی */
 }
 
 /* ستون‌ها */
 .left, .right {
     flex: 1;
     padding: 15px;
-    box-sizing: border-box;
-}
-
-.left {
-    text-align: center; /* وسط‌چین کردن متن */
 }
 
 .left h1 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
 .left p {
@@ -65,7 +59,7 @@ form {
 
 form input, form button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
@@ -86,48 +80,39 @@ form button:hover {
 /* فوتر */
 footer {
     text-align: center;
-    padding: 5px 5px; /* کاهش ارتفاع طوسی */
+    padding: 4px 5px;
     background-color: #f1f1f1;
-    font-size: 0.7rem; /* کاهش اندازه متن */
+    font-size: 0.75rem;
     color: #555;
     border-top: 1px solid #ddd;
-    width: 100%; /* عرض کامل */
-    margin-top: auto; /* همیشه در پایین صفحه */
-    box-sizing: border-box; /* جلوگیری از عرض اضافی */
+    width: 100%;
+    margin-top: auto;
+    box-sizing: border-box;
 }
 
 /* استایل برای موبایل‌ها */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* چینش عمودی */
-        align-items: center; /* وسط‌چین کردن */
-        padding: 15px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .left {
-        order: 1; /* متن بالا */
+        order: 1;
         margin-bottom: 20px;
     }
 
     .right {
-        order: 2; /* فرم پایین */
-        width: 100%; /* عرض کامل */
-    }
-
-    .left h1 {
-        font-size: 1.5rem; /* کاهش اندازه تیتر */
-    }
-
-    .left p {
-        font-size: 0.9rem; /* کاهش اندازه متن توضیحات */
+        order: 2;
+        width: 100%;
     }
 
     form input, form button {
-        font-size: 0.9rem; /* کوچک‌تر کردن فونت فرم */
+        font-size: 0.9rem;
     }
 
     footer {
-        font-size: 0.6rem; /* کوچک‌تر کردن متن فوتر */
-        padding: 3px 10px; /* کاهش بیشتر ارتفاع طوسی */
+        font-size: 0.7rem;
+        padding: 3px 10px;
     }
 }
