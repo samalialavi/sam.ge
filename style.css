@@ -13,11 +13,10 @@ html, body {
 
 /* کانتینر اصلی */
 .wrapper {
-    flex: 1; /* اشغال فضای باقی‌مانده بین هدر و فوتر */
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* وسط‌چین کردن محتوا */
-    align-items: center; /* وسط‌چین کردن عناصر */
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 /* کانتینر متن و فرم */
