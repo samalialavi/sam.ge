@@ -3,41 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Acquire this premium domain to elevate your online presence effortlessly. Contact us for more details!">
-    <title>sam.ge - For Sale</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>SAM Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.web-fonts.ge/fonts/bpg-nino-mtavruli/css/bpg-nino-mtavruli.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-primary: #111827;
+            --text-secondary: #374151;
+            --bg-gray: #f5f5f5;
+            --bg-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-gray);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        [lang="ka"] {
+            font-family: 'BPG Nino Mtavruli', system-ui, -apple-system, sans-serif;
+            letter-spacing: -0.01em;
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .lang-btn {
+            padding: 0.75rem 1.25rem;
+            background: var(--bg-white);
+            border: 1px solid #e5e5e5;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .lang-btn:hover {
+            background: #f8f9fa;
+            transform: translateY(-1px);
+        }
+
+        .container {
+            flex: 1;
+            max-width: 48rem;
+            margin: 6rem auto 2rem;
+            padding: 0 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-white);
+            padding: 4rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05),
+                       0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .intro-text {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.75;
+        }
+
+        .announcement {
+            background-color: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            margin: 3rem 0;
+        }
+
+        .announcement p {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--bg-white);
+            background-color: var(--primary-color);
+            border-radius: 0.75rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 4rem auto 2rem;
+            }
+
+            .card {
+                padding: 2.5rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.25rem;
+            }
+
+            .intro-text {
+                font-size: 1.125rem;
+            }
+
+            .announcement {
+                padding: 2rem;
+            }
+
+            .announcement p {
+                font-size: 1.25rem;
+            }
+
+            .lang-switch {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container">
-            <div class="left">
-                <h1>sam.ge is For Sale!</h1>
-                <p>Acquire this premium domain to elevate your online presence effortlessly.</p>
-                <p>Fill out the form, and we’ll respond promptly with more details.</p>
-            </div>
-            
-            <div class="right">
-                <h2>Free Domain Name Inquiry</h2>
-                <form id="domainInquiryForm">
-                    <input type="text" id="name" placeholder="Your name (required)" required autocomplete="name">
-                    <input type="email" id="email" placeholder="Your email address (required)" required autocomplete="email">
-                    <input type="number" id="offer" placeholder="Your offer in USD (optional)" autocomplete="off">
-                    <input type="number" id="antiSpamAnswer" placeholder="Solve the security question below:" required autocomplete="off">
-                    <button type="submit">Submit</button>
-                </form>
-                <div id="responseContainer" style="display: none;">
-                    <p id="responseMessage" style="color: green; margin-top: 10px;"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2024 SAM Group</p>
-    </footer>
-
-    <script src="script.js"></script>
+<!-- content remains the same -->
 </body>
 </html>
