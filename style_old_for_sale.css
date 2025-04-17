@@ -1,1 +1,133 @@
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;
+    width: 95%;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.left, .right {
+    flex: 1;
+    padding: 15px;
+}
+
+.left h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.left p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; 
+}
+
+form input, form button {
+    width: 100%; 
+    max-width: 300px; 
+    padding: 12px; 
+    margin: 0 auto; 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box; 
+    display: block; 
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; 
+}
+
+input:focus, button:focus {
+    outline: none;
+    border: 2px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+footer {
+    text-align: center;
+    padding: 4px 5px;
+    background-color: #f1f1f1;
+    font-size: 0.75rem;
+    color: #555;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    margin-top: auto;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left {
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    .right {
+        order: 2;
+        width: 100%;
+    }
+
+    form input, form button {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.7rem;
+        padding: 3px 10px;
+    }
+}
